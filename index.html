@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaultick - Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        @keyframes pulse-amber {
+            0%, 100% { box-shadow: 0 0 20px -5px rgba(245, 158, 11, 0.1); }
+            50% { box-shadow: 0 0 30px 5px rgba(245, 158, 11, 0.3); }
+        }
+        
+        .glow-effect { animation: pulse-amber 3s infinite; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10" 
+         style="background-image: radial-gradient(#64748b 1px, transparent 1px); background-size: 30px 30px;">
+    </div>
+    <div class="z-10 flex flex-col items-center max-w-2xl px-6 text-center space-y-8">
+        <div class="mono text-xs text-emerald-500 tracking-widest border border-emerald-900 bg-emerald-950/30 px-3 py-1 rounded-full uppercase">
+            ● System Status: Initializing
+        </div>
+        <div class="w-24 h-24 bg-slate-900 rounded-2xl flex items-center justify-center border border-slate-800 glow-effect mb-4">
+            <svg class="w-12 h-12 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white">
+            Secure for now.<br>
+            <span class="text-slate-500">Saved for later.</span>
+        </h1>
+        <p class="text-lg text-slate-400 max-w-lg leading-relaxed">
+            The zero-knowledge vault for your digital legacy.
+        </p>
+        <!--
+        <form class="w-full max-w-md flex flex-col sm:flex-row gap-3 mt-4" action="#" method="POST">
+            <input type="email" placeholder="Enter your email" required
+                class="flex-1 bg-slate-900/50 border border-slate-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 placeholder-slate-600 transition-all"> 
+            <button type="submit" 
+                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-lg transition-colors duration-200">
+                Notify Me
+            </button>
+        </form>
+        -->
+        <div class="pt-8 flex gap-6 text-slate-600 text-sm font-medium">
+            <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                End-to-End Encrypted
+            </span>
+            <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                Time-Locked
+            </span>
+        </div>
+
+    </div>
+    <div class="absolute bottom-6 mono text-[10px] text-slate-700 uppercase tracking-widest">
+        AES-256-GCM // ARGON2ID // NO RECOVERY // VAULTICK © 2026
+    </div>
+</body>
+</html>
