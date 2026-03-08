@@ -41,12 +41,12 @@
 
         .flicker { animation: flicker 3.5s ease-in-out infinite; }
 
-        @keyframes glow-pulse {
-            0%, 100% { box-shadow: 0 0 20px -5px rgba(245, 158, 11, 0.1); }
-            50% { box-shadow: 0 0 30px 5px rgba(245, 158, 11, 0.3); }
+        @keyframes pulse-green {
+            0%, 100% { opacity: 1; box-shadow: 0 0 6px 1px rgba(52, 211, 153, 0.7); }
+            50% { opacity: 0.5; box-shadow: 0 0 3px 0px rgba(52, 211, 153, 0.3); }
         }
 
-        .glow-effect { animation: glow-pulse 3s infinite; }
+        .pulse-green { animation: pulse-green 2s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-slate-950 text-white h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -55,10 +55,10 @@
     </div>
     <div class="z-10 flex flex-col items-center max-w-2xl px-6 text-center space-y-8">
         <a href="https://github.com/vaultick" target="_blank" rel="noopener noreferrer" class="font-mono inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-xs text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-colors cursor-pointer">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 flicker"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-green"></span>
             SYSTEM STATUS: <span class="text-emerald-300">INITIALIZING</span>
         </a>
-        <div class="w-24 h-24 bg-slate-900 rounded-2xl flex items-center justify-center border border-slate-800 glow-effect mb-4">
+        <div class="w-24 h-24 bg-slate-900 rounded-2xl flex items-center justify-center border border-slate-800 mb-4">
             <svg class="w-12 h-12 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
