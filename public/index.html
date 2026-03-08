@@ -28,17 +28,25 @@
     <link rel="shortcut icon" href="assets/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
         
         body { font-family: 'Inter', sans-serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         
-        @keyframes pulse-amber {
+        @keyframes flicker {
+            0%, 89%, 91%, 93%, 100% { opacity: 1; }
+            90% { opacity: 0.15; }
+            92% { opacity: 0.7; }
+        }
+
+        .flicker { animation: flicker 3.5s ease-in-out infinite; }
+
+        @keyframes glow-pulse {
             0%, 100% { box-shadow: 0 0 20px -5px rgba(245, 158, 11, 0.1); }
             50% { box-shadow: 0 0 30px 5px rgba(245, 158, 11, 0.3); }
         }
-        
-        .glow-effect { animation: pulse-amber 3s infinite; }
+
+        .glow-effect { animation: glow-pulse 3s infinite; }
     </style>
 </head>
 <body class="bg-slate-950 text-white h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -46,19 +54,20 @@
          style="background-image: radial-gradient(#64748b 1px, transparent 1px); background-size: 30px 30px;">
     </div>
     <div class="z-10 flex flex-col items-center max-w-2xl px-6 text-center space-y-8">
-        <div class="mono text-xs text-emerald-500 tracking-widest border border-emerald-900 bg-emerald-950/30 px-3 py-1 rounded-full uppercase">
-            ● System Status: Initializing
-        </div>
+        <a href="https://github.com/vaultick" target="_blank" rel="noopener noreferrer" class="font-mono inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-xs text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-colors cursor-pointer">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 flicker"></span>
+            SYSTEM STATUS: <span class="text-emerald-300">INITIALIZING</span>
+        </a>
         <div class="w-24 h-24 bg-slate-900 rounded-2xl flex items-center justify-center border border-slate-800 glow-effect mb-4">
-            <svg class="w-12 h-12 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            <svg class="w-12 h-12 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
         </div>
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white">
-            Secure now.<br>
-            <span class="text-slate-500">Save for later.</span>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white leading-none">
+            Your secrets, safe <span style="background: linear-gradient(to right, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">forever.</span><br>
+            Even from us.
         </h1>
-        <p class="text-lg text-slate-400 max-w-lg leading-relaxed">
+        <p class="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">
             The zero-knowledge vault for your digital legacy.
         </p>
 
